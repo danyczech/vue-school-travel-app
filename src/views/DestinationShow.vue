@@ -1,7 +1,8 @@
 <template>
   <section class="destination">
     <h1>{{ destination.name }}</h1>
-      <div class="destination-details">
+    <GoBack/>
+    <div class="destination-details">
       <img :src="`/images/${destination.image}`" :alt="destination.name" />
       <p>{{ destination.description }}</p>
     </div>
@@ -25,9 +26,10 @@
 <script>
 import sourceData from "@/data.json";
 import ExperienceCard from '@/components/ExperienceCard.vue'
+import GoBack from '@/components/GoBack.vue'
 
 export default {
-  components: { ExperienceCard },
+  components: { ExperienceCard, GoBack },
   props:{
     id: {type: Number, required: true},
   },
